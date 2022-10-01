@@ -69,9 +69,16 @@ body {
     margin-top: -20px;
   }
 }
-.ft {
+.fn {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  text-align: center;
+}
+.fw {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   align-items: center;
 }
 /* End Components */
@@ -87,8 +94,6 @@ body {
 }
 .header .links .icon {
   width: 30px;
-  display: flex;
-  flex-wrap: wrap;
   justify-content: flex-end;
 }
 .header .container .icon span {
@@ -130,8 +135,7 @@ body {
 .header .container .links ul li {
   background-color: #eee;
   margin-bottom: 1px;
-  text-align: left
-  ;
+  text-align: left;
   transition: var(--main-duration);
 }
 .header .container .links ul li a {
@@ -161,15 +165,15 @@ body {
   position: absolute;
   left: 50%;
   top: 50%;
-  transform: translate(-50% , -50%);
+  transform: translate(-50%, -50%);
   width: 320px;
   max-width: 100%;
-  -webkit-transform: translate(-50% , -50%);
-  -moz-transform: translate(-50% , -50%);
-  -ms-transform: translate(-50% , -50%);
-  -o-transform: translate(-50% , -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
 }
-.section1 .container h1{
+.section1 .container h1 {
   font-size: 50px;
   font-weight: 600;
   color: var(--main-color);
@@ -182,4 +186,31 @@ body {
   margin: 0;
   line-height: 1.8;
   padding: 0;
+}
+/* Section2 */
+.section2 {
+  padding-top: var(--section-padding);
+  padding-bottom: var(--section-padding);
+  background-color: var(--section-background);
+}
+.section2 .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 20px 20px;
+  text-align: center;
+}
+.section2 .container div {
+  padding: 20px;
+}
+.section2 div i {
+  color: var(--main-color);
+}
+.section2 div h3 {
+  margin: 30px;
+  font-weight: 800;
+}
+.section2 div p {
+  font-size: 18px;
+  line-height: 1.8;
+  color: #777;
 }
