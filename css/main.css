@@ -32,17 +32,26 @@ body {
   .container {
     width: 750px;
   }
+  .section3 .grid .img {
+    display: none;
+  }
 }
 /* Medium */
-@media (min-width: 992px) {
+@media (max-width: 992px) {
   .container {
     width: 970px;
+  }
+  .section3 .grid .img {
+    display: none;
   }
 }
 /* Large */
 @media (min-width: 1200px) {
   .container {
     width: 1170px;
+  }
+  .section3 .grid .img {
+    display: block;
   }
 }
 /* End Global Rules */
@@ -56,7 +65,7 @@ body {
   margin: 0;
 }
 .special-heading + p {
-  margin: -30px 0 0;
+  margin: -55px 0 0;
   font-size: 20px;
   text-align: center;
   color: #797979;
@@ -166,7 +175,6 @@ body {
 .section1 {
   background-image: url(/leon-template/imgs/landing.jpg);
   background-size: cover;
-  width: 100vw;
   height: calc(100vh - 64px);
   position: relative;
 }
@@ -215,11 +223,52 @@ body {
   color: var(--main-color);
 }
 /* end section2 */
+.section3 {
+  padding-top: var(--section-padding);
+  padding-bottom: var(--section-padding);
+}
 .section3 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px 20px;
+  gap: 0px 20px;
+  margin: 100px 0 0 0;
+}
+.section3 .grid div {
+  height: 200px;
+  display: flex;
+}
+.section3 .grid div i {
+  color: var(--main-color);
+}
+.section3 .grid div span {
+  margin: 0 0 0 30px;
+}
+.section3 .grid div h3 {
+  margin: 0px 0px 15px 0px;
+}
+.section3 .grid div p {
+  line-height: 1.6;
+  font-size: 16px;
 }
 .section3 .grid .img {
-  grid-area: 1 / 3 / span 1 / span 2;
+  grid-column: 3 / span 1;
+  grid-row: 1 / span 2;
+  text-align: center;
+  height: 346px;
+  position: relative;
+
+}
+.section3 .grid img {
+  height: 346px;
+  width: 260px;
+}
+.section3 .grid .img::before {
+  content: "";
+  position: absolute;
+  background-color: var(--secondary-color);
+  height: calc(100% + 100px);
+  width: 100px;
+  top: -50px;
+  right: 0px;
+  z-index: -1;
 }
