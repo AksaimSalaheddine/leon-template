@@ -26,32 +26,36 @@ body {
   padding-right: 15px;
   margin-left: auto;
   margin-right: auto;
+  /* max-width: 1300px; */
+}
+/* Phones */
+@media (max-width: 767px) {
+  .container {
+    width: calc(100% - 30px);
+  }
+  .section3 .grid .img {
+    display: none;
+  }
 }
 /* Small */
-@media (min-width: 768px) {
+@media (min-width: 768px) and (max-width: 995px) {
   .container {
-    width: 750px;
+    width: calc(100% - 15vw);
   }
   .section3 .grid .img {
     display: none;
   }
 }
-/* Medium */
-@media (max-width: 992px) {
+/* mid */
+@media (min-width: 996px) and (max-width: 1199px) {
   .container {
-    width: 970px;
-  }
-  .section3 .grid .img {
-    display: none;
+    width: calc(100% - 20vw);
   }
 }
-/* Large */
+/* large */
 @media (min-width: 1200px) {
   .container {
-    width: 1170px;
-  }
-  .section3 .grid .img {
-    display: block;
+    width: calc(100% - 30vw);
   }
 }
 /* End Global Rules */
@@ -86,6 +90,7 @@ body {
   font-size: 18px;
   line-height: 1.8;
   color: #777;
+  text-align: center;
 }
 .fn {
   display: flex;
@@ -212,7 +217,7 @@ body {
 }
 .section2 .container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 20px 20px;
   text-align: center;
 }
@@ -223,52 +228,3 @@ body {
   color: var(--main-color);
 }
 /* end section2 */
-.section3 {
-  padding-top: var(--section-padding);
-  padding-bottom: var(--section-padding);
-}
-.section3 .grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 0px 20px;
-  margin: 100px 0 0 0;
-}
-.section3 .grid div {
-  height: 200px;
-  display: flex;
-}
-.section3 .grid div i {
-  color: var(--main-color);
-}
-.section3 .grid div span {
-  margin: 0 0 0 30px;
-}
-.section3 .grid div h3 {
-  margin: 0px 0px 15px 0px;
-}
-.section3 .grid div p {
-  line-height: 1.6;
-  font-size: 16px;
-}
-.section3 .grid .img {
-  grid-column: 3 / span 1;
-  grid-row: 1 / span 2;
-  text-align: center;
-  height: 346px;
-  position: relative;
-
-}
-.section3 .grid img {
-  height: 346px;
-  width: 260px;
-}
-.section3 .grid .img::before {
-  content: "";
-  position: absolute;
-  background-color: var(--secondary-color);
-  height: calc(100% + 100px);
-  width: 100px;
-  top: -50px;
-  right: 0px;
-  z-index: -1;
-}
