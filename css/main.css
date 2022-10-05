@@ -83,26 +83,34 @@ body {
   }
 }
 .second-heading {
-  margin: 30px;
   font-weight: 800;
+  margin: 0 0 10px;
 }
 .second-heading + p {
-  font-size: 18px;
-  line-height: 1.8;
+  font-size: 16px;
+  line-height: 1.6;
+  text-align: left;
   color: #777;
-  text-align: center;
+  margin: 0;
 }
 .fn {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  text-align: center;
 }
 .fw {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+}
+.section2,
+.section3,
+.section4,
+.section5,
+.section6 {
+  padding-top: var(--section-padding);
+  padding-bottom: var(--section-padding);
+  background-color: var(--section-background);
 }
 /* End Components */
 /* header */
@@ -210,14 +218,9 @@ body {
   padding: 0;
 }
 /* Section2 */
-.section2 {
-  padding-top: var(--section-padding);
-  padding-bottom: var(--section-padding);
-  background-color: var(--section-background);
-}
 .section2 .container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px 20px;
   text-align: center;
 }
@@ -228,3 +231,163 @@ body {
   color: var(--main-color);
 }
 /* end section2 */
+/* start section 3 */
+.section3 {
+  background-color: unset;
+}
+.section3 .grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 0 20px;
+  padding: 100px 0 0;
+}
+.section3 .grid div:not(.img) {
+  height: 200px;
+}
+.section3 .grid i {
+  color: var(--main-color);
+}
+.section3 .grid span {
+  margin-left: 30px;
+}
+.section3 .grid .img {
+  grid-column: 3 / span 1;
+  grid-row: 1 / span 2;
+  height: fit-content;
+  position: relative;
+  width: 360px;
+  text-align: center;
+}
+.section3 .grid .img::before {
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: calc(100% + 100px);
+  background-color: var(--secondary-color);
+  right: 0;
+  top: -50px;
+  z-index: -1;
+  width: 100px;
+}
+.section3 .grid .img img {
+  height: 350px;
+  width: 260px;
+}
+/* End section3 */
+/* Start Section 4 */
+.section4 .grid {
+  margin: 100px 0 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 20px 20px;
+}
+.section4 .grid div {
+  background-color: white;
+}
+.section4 .grid div *:not(img) {
+  padding-left: 15px;
+}
+.section4 .grid img {
+  max-width: 100%;
+  margin-bottom: 20px;
+}
+/* end Section4 */
+/* Start Section 5 */
+.section5 {
+  background-color: unset;
+}
+.section5 .flex {
+  margin: 100px 0 0;
+}
+.section5 .flex .img {
+  width: 250px;
+  height: 375px;
+  position: relative;
+}
+.section5 .flex .img::before {
+  content: "";
+  position: absolute;
+  background-color: #ebeced;
+  width: 100px;
+  height: calc(100% + 80px);
+  z-index: -1;
+  left: -30px;
+  top: -40px;
+}
+.section5 .flex .img::after {
+  content: "";
+  position: absolute;
+  width: 120px;
+  height: calc(100% - 80px);
+  border-left: 80px solid var(--main-color);
+  border-bottom: 80px solid var(--main-color);
+  left: calc(100% - 50px);
+  top: -40px;
+  z-index: -1;
+}
+.section5 .flex .img img {
+  width: 100%;
+}
+
+.section5 .flex .text {
+  flex-basis: calc(100% - 500px);
+}
+.section5 .flex .text p {
+  line-height: 1.8;
+}
+.section5 .flex .text p:first-of-type {
+  font-weight: 800;
+  padding-bottom: 30px;
+}
+.section5 .flex .text p:last-of-type {
+  color: #777;
+  padding-top: 30px;
+}
+.section5 hr {
+  border-color: var(--main-color);
+  width: 50%;
+  display: inline-block;
+}
+@media (max-width: 966px) {
+  .section5 .flex {
+    flex-direction: column;
+    text-align: center;
+  }
+  .section5 .flex .img::before,
+  .section5 .flex .img::after {
+    display: none;
+  }
+  .section5 .flex .img {
+    margin: 0 auto 60px;
+  }
+}
+/* End section 5 */
+/* Start Section6 */
+.section6 p:not(:first-of-type) {
+  text-align: center;
+  margin: 20px;
+}
+.section6 p:nth-of-type(2) {
+  font-size: 35px;
+  font-weight: 800;
+  color: var(--secondary-color);
+  letter-spacing: -2px;
+  margin-top: 60px;
+}
+.section6 p:nth-of-type(3) {
+  font-size: 35px;
+  font-weight: 800;
+  color: var(--main-color);
+}
+.section6 p i {
+  color: var(--secondary-color);
+}
+/* end section6 */
+/* footer */
+footer {
+  background-color: var(--secondary-color);
+  margin: 0;
+  padding: 8px;
+  text-align: center;
+  color: white;
+}
